@@ -271,3 +271,78 @@ int Menu(void)
          }
     return 0;
 }
+/*
+void SaveInventory(struct node)
+{
+    FILE *fout;
+
+    if((outp = fopen("output.txt","w"))==0)
+    {
+        printf("\nCANNOT OPEN FILE\n");
+        return;
+    }
+
+    //connect to the file
+    outp= fopen("output.txt","w");
+
+    fprintf(outp,"%d", *size);
+    fwrite(br, sizeof(gaming),*size,outp);
+
+    //close file pointer
+    fclose(outp);
+}
+
+void LoadSalesRecords(gaming br[], int *size)
+{
+    FILE * inp;
+
+    if((inp = fopen("output.txt","r"))==0)
+    {
+        printf("CANNOT OPEN FILE\n");
+        return;
+    }
+    //connect to file
+    inp = fopen("output.txt","r");
+
+    fscanf(inp,"%d",size);
+    fread(br, sizeof(gaming),*size,inp);
+
+    //close file pointer
+    fclose(inp);
+}
+
+
+
+void  SaveInventory(node){
+
+FILE *out;
+if((fout=fopen("pharmacy.txt","w))==NULL){
+ printf("cant open file! \n");
+ exit(1);
+
+}
+
+do{
+    printf("please enter the ID: \t")
+    scanf("%d",&ID);
+    if(ID ==0)
+        break;
+}
+else{
+
+    printf("please enter the name \t");
+    fflush(stdin);
+    gets(name);
+      printf("please enter the type \t");
+    fflush(stdin);
+    gets(type);
+     fprintf(fout,"ID:\t%-5d \n name:\t%-30s \n type:\t%-30s \n" ,ID,name,type);
+
+}
+
+while(1){
+      fclose(fout);
+
+
+}
+*/
