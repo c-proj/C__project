@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+//jikml,.kl,.;
 typedef struct node node;
 
 struct node
