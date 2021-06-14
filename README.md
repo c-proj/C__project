@@ -1,4 +1,4 @@
-# inventory database of pharmcy-project
+# inventory database of pharmacy-project
 
 ## Team members
 1. ميريهان محمد فرغلي
