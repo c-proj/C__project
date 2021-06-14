@@ -198,3 +198,56 @@ void display()
     }
 
 }
+
+
+
+
+//display the options to the user and files
+void DisplayOptions(void)
+{
+    printf("HELLO, WELCOME TO THE INVENTORY PROGRAM.\n");
+    printf("THIS PROGRAM HOLDS INVENORY FOR PHARMACUTICAL COMPANIES ALONG WITH THEIR NAME,ID,PRICE,\n");
+    printf("***************\n\n");
+    printf("HERE ARE YOUR OPTIONS\n");
+    printf("1--ADD A NEW MEDECINE\n");
+    printf("2--DELETE AN MEDECINE \n");
+    printf("3--DISPLAY THE INVENTORY\n");
+    printf("4--RESET THE ENTIRE INVENTORY\n");
+    printf("5--SAVE CURRENT INVENTORY TO FILE\n");
+    printf("6--QUIT\n");
+}
+
+
+//save to file
+
+void SaveInventory(){
+
+  node* current_node;
+   FILE *out;
+    if(isempty())
+    {printf("stack is Empty");
+    }
+
+    else
+    {
+        out=fopen("drugs.txt","w") ;
+        current_node=top;
+        while(current_node!=NULL)
+        {
+            fprintf(out,"Medicine ID: %d\t\t Medicine Name: %s\t\t Medicine type: %s\t\t Company Name: %s\t\t Medicine price: %d \t\t Quantity: %d\n",current_node->id,current_node->name,current_node->type,current_node->pharm_company,current_node->price,current_node->med_quantity);
+
+            current_node=current_node->next;
+        }
+
+    }
+
+    fclose(out);
+
+
+
+
+}
+
+
+
+
