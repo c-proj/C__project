@@ -177,4 +177,24 @@ void deletestack()
     }
     x=0;
 }
+// --> Noura Dispaly & Menu functions 
 
+void display()
+{
+    node* current_node;
+
+    if(isempty())printf("stack is Empty");
+
+    else
+    {
+        current_node=top;
+        while(current_node!=NULL)
+        {
+            printf("%d\t\t%s\t\t%s\t\t%s\t\t%dt\t%d\n",current_node->id,current_node->name,current_node->type,current_node->pharm_company,current_node->price,current_node->med_quantity);
+
+            current_node=current_node->next;
+        }
+
+    }
+
+}
