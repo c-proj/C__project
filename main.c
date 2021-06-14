@@ -125,3 +125,18 @@ int Menu(void)
 
     return selection;
 }
+void push(int value,char*name,char*type,char*pharm_company,int price,int med_quantity)
+{
+
+    node *new_node;
+    new_node=(node*)malloc(sizeof(node));
+    new_node->id=value;
+    new_node->name=name;
+    new_node->type=type;
+    new_node->pharm_company=pharm_company;
+    new_node->price=price;
+    new_node->med_quantity=med_quantity;
+    new_node->next=top;
+    top=new_node;
+    x++;
+}
