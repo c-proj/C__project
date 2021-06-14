@@ -140,3 +140,41 @@ void push(int value,char*name,char*type,char*pharm_company,int price,int med_qua
     top=new_node;
     x++;
 }
+// --> Mirihan Pop & Delete stack functions
+
+bool isempty(){
+
+return top==NULL;
+
+}
+
+int pop()
+{
+    int value;
+    node *current_node;
+    if(isempty())printf("Stack is Empty\n");
+
+    else
+    {
+        x--;
+        current_node=top;
+        value=current_node->id;
+        top=current_node->next;
+        free(current_node);
+
+        return value;
+
+    }
+
+}
+
+void deletestack()
+{
+    int size=x;
+    for(int i=1; i<=size; i++)
+    {
+        pop();
+    }
+    x=0;
+}
+
