@@ -234,10 +234,5 @@ int Menu(void)
 
     return selection;
 }
-}/*
-        else if(selection==6)
-        {
-            printf("LOADING SALES RECORDS FROM FILE\n\n");
-            LoadSalesRecords(entry, &size);
-        }*/
+
 
