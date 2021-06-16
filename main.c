@@ -165,7 +165,7 @@ void push(int value,char*name,char*type,char*pharm_company,int price,int med_qua
     top=new_node;
     x++;
 }
-// --> Mirihan Pop & Delete stack functions
+// --> Mirihan Pop & Delete stack functions + functions prtotype 
 
 bool isempty(){
 
