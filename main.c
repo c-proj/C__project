@@ -202,52 +202,67 @@ void display()
 
 
 
-//-->youstina display the options to the user and files
-void DisplayOptions(void)
-{
-    printf("HELLO, WELCOME TO THE INVENTORY PROGRAM.\n");
-    printf("THIS PROGRAM HOLDS INVENORY FOR PHARMACUTICAL COMPANIES ALONG WITH THEIR NAME,ID,PRICE,\n");
-    printf("***************\n\n");
-    printf("HERE ARE YOUR OPTIONS\n");
-    printf("1--ADD A NEW MEDECINE\n");
-    printf("2--DELETE AN MEDECINE \n");
-    printf("3--DISPLAY THE INVENTORY\n");
-    printf("4--RESET THE ENTIRE INVENTORY\n");
-    printf("5--SAVE CURRENT INVENTORY TO FILE\n");
-    printf("6--QUIT\n");
-}
-
+//--> youstina saveinventory and readfile
 
 //save to file
 
-void SaveInventory(){
+void SaveInventory(int value,char*name,char*type,char*pharm_company,int price,int med_quantity){
 
-  node* current_node;
-   FILE *out;
-    if(isempty())
-    {printf("stack is Empty");
-    }
+ 
+  FILE *out;
+
+  if((out=fopen("drugs.txt","a+"))==NULL) {
+    printf("cant open file \n");
+
+  }
+
 
     else
     {
-        out=fopen("drugs.txt","w") ;
-        current_node=top;
-        while(current_node!=NULL)
-        {
-            fprintf(out,"Medicine ID: %d\t\t Medicine Name: %s\t\t Medicine type: %s\t\t Company Name: %s\t\t Medicine price: %d \t\t Quantity: %d\n",current_node->id,current_node->name,current_node->type,current_node->pharm_company,current_node->price,current_node->med_quantity);
+        
+        
+           
+fprintf(out,"%d %s %s %s %d %d\n",value,name,type,pharm_company,price,med_quantity);
 
-            current_node=current_node->next;
-        }
+         
+      
 
     }
 
-    fclose(out);
-
-
-
-
+   fclose(out);
 }
+//readfile
+void readfile(){
 
 
-
-
+    int value=0;
+    int price=0;
+    char name[50];
+    char type[50];
+    char company[50];
+    int Quan=0;
+    char*p;
+    char c[1000];
+    FILE *fin;
+    if((fin=fopen("drugs.txt","r"))==NULL)
+        printf("file not found");
+         while(fgets(c, sizeof c, fin) !=NULL){
+         if ((strlen(c)>0) && (c[strlen (c) - 1] == '\n'))
+         c[strlen (c) - 1] = '\0';
+         p=strtok(c," ");
+         value=atoi(p);
+         p=strtok(NULL," ");
+         strcpy(name,p);
+         p=strtok(NULL," ");
+         strcpy(company,p);
+         p=strtok(NULL," ");
+         strcpy(type,p);
+         p=strtok(NULL," ");
+         price=atoi(p);
+         p=strtok(NULL," ");
+         Quan=atoi(p);
+         push(value,name,type,company,price,Quan);
+      }
+      printf("\n");
+      fclose(fin);
+}
