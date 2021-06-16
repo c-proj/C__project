@@ -147,15 +147,18 @@ int Menu(void)
 
     return selection;
 }
+// -->Mariam push function
 void push(int value,char*name,char*type,char*pharm_company,int price,int med_quantity)
 {
-
     node *new_node;
     new_node=(node*)malloc(sizeof(node));
     new_node->id=value;
-    new_node->name=name;
-    new_node->type=type;
-    new_node->pharm_company=pharm_company;
+    new_node->name=malloc(strlen(name)+1);
+    strcpy(new_node->name,name);
+    new_node->type=malloc(strlen(type)+1);
+    strcpy(new_node->type,type);
+    new_node->pharm_company=malloc(strlen(pharm_company)+1);
+    strcpy(new_node->pharm_company,pharm_company);
     new_node->price=price;
     new_node->med_quantity=med_quantity;
     new_node->next=top;
