@@ -302,3 +302,13 @@ void readfile(){
       printf("\n");
       fclose(fin);
 }
+void find(int value)
+{
+
+node *current_node=top;
+        while(current_node->id!=value)
+        {
+            current_node=current_node->next;
+        }
+         printf("%d\t\t%s\t\t%s\t\t%s\t\t%d\t\t%d\n",current_node->id,current_node->name,current_node->type,current_node->pharm_company,current_node->price,current_node->med_quantity);
+}
