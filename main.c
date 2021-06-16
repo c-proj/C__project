@@ -116,7 +116,7 @@ int main()
 
 ///////////////////////////
 
-//prompts the user to get a selection
+// Noura  >>--prompts the user to get a selection
 int Menu(void)
 {
     int selection;
@@ -177,8 +177,7 @@ void deletestack()
     }
     x=0;
 }
-// --> Noura Dispaly & Menu functions 
-
+// Noura-->>dispaly function
 void display()
 {
     node* current_node;
@@ -190,13 +189,28 @@ void display()
         current_node=top;
         while(current_node!=NULL)
         {
-            printf("%d\t\t%s\t\t%s\t\t%s\t\t%dt\t%d\n",current_node->id,current_node->name,current_node->type,current_node->pharm_company,current_node->price,current_node->med_quantity);
+            printf("%d\t\t%s\t\t%s\t\t%s\t\t%d\t\t%d\n",current_node->id,current_node->name,current_node->type,current_node->pharm_company,current_node->price,current_node->med_quantity);
 
             current_node=current_node->next;
         }
 
     }
 
+}
+
+
+void DisplayOptions(void)
+{
+    printf("HELLO, WELCOME TO THE INVENTORY PROGRAM.\n");
+    printf("THIS PROGRAM HOLDS INVENORY FOR PHARMACUTICAL COMPANIES ALONG WITH THEIR NAME,ID,PRICE,\n");
+    printf("*\n\n");
+    printf("HERE ARE YOUR OPTIONS\n");
+    printf("1--ADD A NEW MEDECINE\n");
+    printf("2--DELETE AN MEDECINE \n");
+    printf("3--DISPLAY THE INVENTORY\n");
+    printf("4--RESET THE ENTIRE INVENTORY\n");
+    printf("5--TO FIND MEDECINE INVENTORY \n");
+    printf("6--QUIT\n");
 }
 
 
