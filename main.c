@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <stdlib.h>
 #include <stdbool.h>
 
 typedef struct node node;
@@ -20,13 +20,34 @@ struct node
 };
 node *top=NULL;
 int x;
- FILE *fp;
+
 
 //prompts the user to get a selection
 int Menu(void);
 
 //display the options to the user
 void DisplayOptions(void);
+
+//add medicine to the stack
+void push(int value,char*name,char*type,char*pharm_company,int price,int med_quantity);
+
+//checks the stack is empty or not
+bool isempty();
+
+//deletes the last added medicine
+int pop();
+
+//reset the entire inventory
+void deletestack();
+
+//Save the medicines to file
+void SaveInventory(int value,char*name,char*type,char*pharm_company,int price,int med_quantity);
+
+//read from file
+void readfile();
+
+//find a certain medicine
+void find(int value);
 int main()
 {
    int selection;
