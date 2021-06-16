@@ -51,10 +51,11 @@ void find(int value);
 
 int main()
 {
+
    int selection;
 
     DisplayOptions();
-
+    readfile();
     selection= Menu();
 
  // ---> Marwa While loops & Getting inputs needed from user to pass it to push
@@ -64,7 +65,6 @@ int main()
         if (selection==1)
         {
             printf("ADD MEDECINE\n\n");
-
 
             char *a;
             a=(char*)malloc(15);
@@ -93,7 +93,7 @@ int main()
             scanf("%d",&med_quantity);
 
                         push(ID,a,b,c,price,med_quantity);
-
+                        SaveInventory(ID,a,b,c,price,med_quantity);
         }
         else if(selection==2)
         {
@@ -112,12 +112,17 @@ int main()
         {
             printf("RESET ENTIRE INVENTORY\n\n");
             deletestack();
+            FILE *Delete=fopen("drugs.txt","w");
+            Delete=freopen(NULL,"w",Delete);
+            fclose(Delete);
         }
         else if(selection==5)
         {
-            printf("SAVING CURRENT INVENTORY TO FILE\n\n");
-            SaveInventory();
-            //saves to file
+            int ID;
+            printf("FINDING MEDICINE INVENTORY \n\n");
+            printf("Enter the ID of medicine to find\n\n");
+            scanf("%d",&ID);
+            find(ID);
         }
         else
         {
